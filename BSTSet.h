@@ -18,15 +18,20 @@ public:
 	~BSTSet();
 
 	// required methods
-	bool isIn(int v);
+	bool isIn(int v) const;
 	void add(int v);
 	bool remove(int v);
 	void Union(const BSTSet& s);
 	void intersection(const BSTSet& s);
 	void difference(const BSTSet& s);
-	int size();
+	int size() const;
 	int height();
 	void printNonRec(); // create and use class MyStack
+
+	void destroy(TNode* t);
+	void replaceWithRightMin(TNode *curr);
+	void replaceWithLeftMax(TNode *curr);
+	void printNice(TNode *t, int indent = 0);
 
 	// provided recursive print method
 	void printBSTSet();

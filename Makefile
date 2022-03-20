@@ -6,4 +6,4 @@ lab:
 	$(CC) $(CFLAGS) $(INCLUDES) *.cpp
 
 single:
-	$(CC) $(CFLAGS) $(INCLUDES) BSTSet.cpp
+	$(CC) $(CFLAGS) $(INCLUDES) [!Lab4]*.cpp
