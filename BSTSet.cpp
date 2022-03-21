@@ -306,10 +306,33 @@ int BSTSet::height()
     return height;
 }
 
-// create and use class MyStack
 void BSTSet::printNonRec()
 {
-    // TODO
+    if (root == NULL) {
+        std::cout << "";
+        return;
+    }
+
+    Stack<TNode *> stack;
+    stack.push(root);
+
+    TNode *curr = root->left;
+
+    while(1) {
+        while (curr) {
+            stack.push(curr);
+            curr = curr->left;
+        }
+
+        if (!stack.isEmpty()) {
+            curr = stack.pop();
+            std::cout << curr->element << ",";
+
+            curr = curr->right;
+        } else {
+            break;
+        }
+    }
 }
 
 void BSTSet::printNice(TNode *t, int indent)
@@ -354,6 +377,7 @@ void BSTSet::printBSTSet(TNode* t)
 //     BSTSet set2 = BSTSet(input2);
 //     set.printNice(set.getRoot());
 //     std::cout << "-------" << std::endl;
-//     set.intersection(set2);
-//     set.printNice(set.getRoot());
+//     set.printBSTSet();
+//     std::cout << std::endl;
+//     set.printNonRec();
 // }
