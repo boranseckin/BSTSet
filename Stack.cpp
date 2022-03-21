@@ -1,3 +1,8 @@
+/**
+ * @file Stack.cpp
+ * @author Boran Seckin (seckinb@mcmaster.ca)
+ */
+
 #include "Stack.h"
 #include <iostream>
 

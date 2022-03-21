@@ -1,3 +1,8 @@
+/**
+ * @file BSTSet.cpp
+ * @author Boran Seckin (seckinb@mcmaster.ca)
+ */
+
 #include "BSTSet.h"
 #include "Stack.h"
 #include "Stack.cpp"
@@ -256,11 +261,12 @@ int BSTSet::size() const
 
     int size = 1, count = 0;
 
+    TNode *curr;
     while(!queue.empty()) {
         count = queue.size();
 
         while(count > 0) {
-            TNode *curr = queue.front();
+            curr = queue.front();
             queue.erase(queue.begin());
 
             if (curr->left != NULL) {
@@ -288,12 +294,13 @@ int BSTSet::height()
 
     int height = -1, count = 0;
 
+    TNode *curr;
     while(!queue.empty()) {
         count = queue.size();
         height++;
 
         while(count > 0) {
-            TNode *curr = queue.front();
+            curr = queue.front();
             queue.erase(queue.begin());
 
             if (curr->left != NULL) queue.push_back(curr->left);
@@ -368,16 +375,3 @@ void BSTSet::printBSTSet(TNode* t)
         printBSTSet(t->right);
     }
 }
-
-// int main() {
-//     const std::vector<int> input = {1,4,2,5,3};
-//     const std::vector<int> input2 = {9,7,8,4,5,3,6};
-//     //4 5 3
-//     BSTSet set = BSTSet(input);
-//     BSTSet set2 = BSTSet(input2);
-//     set.printNice(set.getRoot());
-//     std::cout << "-------" << std::endl;
-//     set.printBSTSet();
-//     std::cout << std::endl;
-//     set.printNonRec();
-// }

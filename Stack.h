@@ -1,3 +1,8 @@
+/**
+ * @file Stack.h
+ * @author Boran Seckin (seckinb@mcmaster.ca)
+ */
+
 #ifndef STACK_H_
 #define STACK_H_
 

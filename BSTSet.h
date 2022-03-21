@@ -1,3 +1,8 @@
+/**
+ * @file BSTSet.h
+ * @author Boran Seckin (seckinb@mcmaster.ca)
+ */
+
 #ifndef BSTSET_H_
 #define BSTSET_H_
 
@@ -28,11 +33,6 @@ public:
 	int height();
 	void printNonRec(); // create and use class MyStack
 
-	void destroy(TNode* t);
-	void replaceWithRightMin(TNode *curr);
-	void replaceWithLeftMax(TNode *curr);
-	void printNice(TNode *t, int indent = 0);
-
 	// provided recursive print method
 	void printBSTSet();
 
@@ -45,6 +45,11 @@ public:
 private:
 	// provided helper methods
 	void printBSTSet(TNode* t);
+
+	void destroy(TNode* t);
+	void replaceWithRightMin(TNode *curr);
+	void replaceWithLeftMax(TNode *curr);
+	void printNice(TNode *t, int indent = 0);
 };
 
 #endif /* BSTSET_H_ */
